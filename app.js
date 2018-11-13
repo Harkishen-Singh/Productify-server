@@ -2,6 +2,7 @@ const app = require('express')(),
     mongo = require('mongodb').MongoClient,
     port = process.env.PORT || 5000,
     host = '0.0.0.0',
+    socket = require('socket.io'),
     // uri = 'mongodb://127.0.0.1:27017',
     uri='mongodb+srv://harkishen:Bbsr131@cluster0-y5bau.mongodb.net/productivity_database?retryWrites=true'
     bodyParser = require('body-parser');
@@ -115,3 +116,9 @@ const server = app.listen(port, host, e => {
     else 
         console.warn('Listening at HOST: '+server.address().address + '  PORT: '+server.address().port);
 });
+
+
+var io = socket(server);
+io.on('connection', sock => {
+    console.log('socket connection made');
+}) 
