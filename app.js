@@ -142,8 +142,8 @@ io.on('connection', sock => {
                             visited = true;
                             console.log('website : '+clientObject['currentURL']+' already visited. Skipping...');
                             dbo.close();
-                            res.status(299);
-                            res.send('Submitted Successfully!');
+                            // res.status(299);
+                            // res.send('Submitted Successfully!');
                             break;
                         }
                     }
@@ -195,8 +195,8 @@ io.on('connection', sock => {
                                     }
                                     
                                 } dbo.close();
-                                res.status(299);
-                                res.send('Submitted Successfully!');
+                                // res.status(299);
+                                // res.send('Submitted Successfully!');
                             }
                         });
                     }
